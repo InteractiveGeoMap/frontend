@@ -92,6 +92,14 @@ const variantBody = {
     },
 }
 
+const variantGlobe = {
+  borderColor: "transparent",
+  color: "primary.globebase",
+  _hover: {
+    color: "primary.globehover",
+  },
+}
+
 const variantLink = defineStyle({
   borderColor: "transparent",
   color: "primary.text",
@@ -132,6 +140,7 @@ const variants = {
   outline: variantOutline,
   ghost: variantGhost,
   link: variantLink,
+  globe: variantGlobe,
   body: variantBody,
 }
 

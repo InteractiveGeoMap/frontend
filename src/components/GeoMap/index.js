@@ -92,16 +92,18 @@ dropDownCountry.name="Country"
 export default function GeoMap({topoJSONData, locationJSON}) {
   const containerRef = useRef(null)
   const [ currentZoom, setZoomed ] = useState(false);
-  const [ country, setCountry] = useState(null)
-  
-  
-
+  const [ country, setCountry] = useState(null);
+  const [isCollapsed, setCollapse] = useState(true);
 
   return (
       <Page 
         ref={containerRef}
         >
+<<<<<<< HEAD
         {/* <Sidebar> 
+=======
+        <Sidebar title="Explore"> 
+>>>>>>> a8f84ae (chore: sidebar component update)
             <Box m={8}>
                 Hello
             </Box>
