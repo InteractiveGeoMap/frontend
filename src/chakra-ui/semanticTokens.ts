@@ -43,6 +43,11 @@ const semanticTokens = {
       lowContrast: { _light: "blue.100", _dark: "orange.800" },
       hover: { _light: "blue.400", _dark: "orange.400" },
       visited: { _light: "blue.700", _dark: "orange.550" },
+
+      // Globe project colors placeholder
+      globebase:{ _light: "gray.900", _dark: "orange.500" },
+      globehover:{ _light: "gray.500", _dark: "orange.400" },
+
       // ! Deprecating primary.light
       light: { _light: "blue.100", _dark: "orange.100" },
       // ! Deprecating primary.dark

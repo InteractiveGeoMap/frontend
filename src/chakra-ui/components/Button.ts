@@ -73,6 +73,14 @@ const variantGhost = {
   borderColor: "transparent",
 }
 
+const variantGlobe = {
+  borderColor: "transparent",
+  color: "primary.globebase",
+  _hover: {
+    color: "primary.globehover",
+  },
+}
+
 const variantLink = defineStyle({
   borderColor: "transparent",
   fontWeight: 700,
@@ -107,6 +115,7 @@ const variants = {
   outline: variantOutline,
   ghost: variantGhost,
   link: variantLink,
+  globe: variantGlobe,
 }
 
 export const Button = defineStyleConfig({
