@@ -1,0 +1,12 @@
+# In progress
+name: (main) push to external repo? Or sync?
+on:
+  push:
+    branches:
+      - preview/v0.0.1
+jobs:
+  push-to-external-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
