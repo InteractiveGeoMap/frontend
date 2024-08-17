@@ -1,0 +1,19 @@
+# In progress
+name: sync with external repo
+on:
+  push:
+    branches:
+      - preview/v0.0.1
+  workflow_dispatch:
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@main
+      - name: Run GitHub File Sync
+        uses: BetaHuhn/repo-file-sync-action@latest
+        with:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SKIP_PR: true
+

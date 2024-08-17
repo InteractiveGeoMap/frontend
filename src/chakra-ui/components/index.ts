@@ -28,7 +28,6 @@ import { Table } from "./Table"
 import { Tabs } from "./Tabs"
 import { Tag } from "./Tag"
 import { Text } from "./Text"
-import { Box } from "./Box"
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -60,5 +59,4 @@ export default {
   Tabs,
   Tag,
   Text,
-  Box,
 }
