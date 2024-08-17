@@ -1,4 +1,5 @@
-SkyHearts/preview-eth-globe:
+# Test sync
+SkyHearts/frontend-preview:
   - source: ./
     dest: ./
     deleteOrphaned: true
