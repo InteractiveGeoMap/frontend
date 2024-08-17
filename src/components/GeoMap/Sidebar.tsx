@@ -12,6 +12,7 @@ interface Props {
 
 
 // Use setParentCollapse to obtain the collapse state of the component or use data-collapse
+// TestSync
 /*
 In parent:
 const [isCollapsed, setCollapse] = useState<boolean>(true);
