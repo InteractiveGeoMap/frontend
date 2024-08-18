@@ -9,6 +9,7 @@ import React from 'react'
 import GeoButtonDropdown from "@/components/GeoMap/GeoButtonDropdown"
 import GeoSVG from "@/components/GeoMap/GeoSVG"
 import {Sidebar} from"@/components/GeoMap/Sidebar"
+import {RadioGroupToggle} from"@/components/GeoMap/RadioGroupToggle"
 
 import { MAIN_CONTENT_ID } from "@/lib/constants"
 
@@ -93,8 +94,10 @@ export default function GeoMap({topoJSONData, locationJSON}) {
   const containerRef = useRef(null)
   const [ currentZoom, setZoomed ] = useState(false);
   const [ country, setCountry] = useState(null);
-  const [isCollapsed, setCollapse] = useState(true);
+  const [isCollapsed, setCollapse] = useState(false);
+  const [value, setValue] = useState("Globe")
 
+  console.log("Parent value: ", value)
   return (
       <Page 
         ref={containerRef}
