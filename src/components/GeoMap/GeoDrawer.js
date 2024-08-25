@@ -23,7 +23,7 @@ import GeoCard from '@/components/GeoMap/GeoCard'
 	}
 	else 
 		data = locationJSON[0]
-	console.log("data",data)
+	// console.log("data",data)
 	return (
 		<Drawer
 			isOpen={isOpen}

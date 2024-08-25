@@ -221,7 +221,7 @@ const zoom = d3.zoom()
 
 export function passInitialProps(containerRef, svgRef, themeProps, colorModeProps, setZoomedProps, onOpenProps, setCountryProps) {
 	theme = themeProps;
-	console.log(theme)
+	// console.log(theme)
 	colorMode = colorModeProps;
 	setZoomed = setZoomedProps;
 	onOpen = onOpenProps;

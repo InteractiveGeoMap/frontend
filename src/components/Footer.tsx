@@ -1,4 +1,3 @@
-// import { useTranslation } from "next-i18next"
 import { FaDiscord, FaGithub, FaTwitter } from "react-icons/fa"
 import { IoChevronUpSharp } from "react-icons/io5"
 import {
@@ -15,7 +14,6 @@ import {
 import type { FooterLink, FooterLinkSection } from "@/lib/types"
 
 import { BaseLink } from "@/components/Link"
-import Translation from "@/components/Translation"
 
 import { scrollIntoView } from "@/lib/utils/scrollIntoView"
 
@@ -40,12 +38,12 @@ const socialLinks = [
 ]
 
 type FooterProps = {
-  lastDeployLocaleTimestamp: string
+  lastDeployLocaleTimestamp?: string
 }
 
-// const Footer = ({ lastDeployLocaleTimestamp }: FooterProps) => {
+const Footer = ({ lastDeployLocaleTimestamp }: FooterProps) => {
   // const { t } = useTranslation("common")
-  const Footer = () => {
+  // const Footer = () => {
   
   // const linkSections: FooterLinkSection[] = [
   //   {
@@ -343,9 +341,9 @@ type FooterProps = {
         borderTop={"1px solid"}
         borderColor={"body.light"}
       >
-        {/* <Text fontSize={"sm"} fontStyle={"italic"} color={"body.medium"}>
-          <Translation id="website-last-updated" />: {lastDeployLocaleTimestamp}
-        </Text> */}
+        <Text fontSize={"sm"} fontStyle={"italic"} color={"body.medium"}>
+          {lastDeployLocaleTimestamp}
+        </Text>
 
         <Button
           leftIcon={<IoChevronUpSharp />}
@@ -370,7 +368,7 @@ type FooterProps = {
         {/* {linkSections.map((section: FooterLinkSection, idx) => (
           <Box key={idx}>
             <Heading as="h3" fontSize="sm" lineHeight="base" my="1.14em">
-              <Translation id={section.title} />
+              {section.title}
             </Heading>
             <List fontSize="sm" lineHeight="base" fontWeight="normal" m="0">
               {section.links.map((link, linkIdx) => (
