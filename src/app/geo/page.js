@@ -6,6 +6,7 @@ import Papa from 'papaparse';
 const topoFileName = "countries-110m.json"
 // todo use json data/project_community.json
 const datafileName = "SEA_data.csv"
+const projectData = require("../../data/project_community.json")
 
 const countries = [
   "Thailand ",
@@ -104,8 +105,6 @@ export default async function Geo() {
   const locationJSON = convertData(dataJSON)
 
   return (
-    <GeoMap topoJSONData={topoJSONData} locationJSON={locationJSON}>
-      
-    </GeoMap>
+    <GeoMap topoJSONData={topoJSONData} locationJSON={locationJSON} projectData={projectData} />
   );
 }

@@ -38,5 +38,4 @@ const Sidebar: FC<Props>  = ({ children }) => {
     </>
   )
 };
-
 export { Sidebar }

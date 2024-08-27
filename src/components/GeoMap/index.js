@@ -9,6 +9,8 @@ import React from 'react'
 import GeoButtonDropdown from "@/components/GeoMap/GeoButtonDropdown"
 import GeoSVG from "@/components/GeoMap/GeoSVG"
 import {Sidebar} from"@/components/GeoMap/Sidebar"
+import MultiCards from '@/components/GeoMap/Cards' // Add this import
+import { RightSidebar } from "@/components/GeoMap/RightSidebar" // Add this import
 
 import { MAIN_CONTENT_ID } from "@/lib/constants"
 
@@ -88,19 +90,16 @@ const dropDownCountry = [
 
 dropDownCountry.name="Country"
 
-export default function GeoMap({topoJSONData, locationJSON}) {
+export default function GeoMap({topoJSONData, locationJSON, projectData}) {
   const containerRef = useRef(null)
   const [ currentZoom, setZoomed ] = useState(false);
   const [ country, setCountry] = useState(null)
   
-  
-
-
   return (
       <Page 
         ref={containerRef}
         >
-        <Sidebar> 
+          <Sidebar> 
             <Box m={8}>
                 Hello
             </Box>
@@ -108,8 +107,16 @@ export default function GeoMap({topoJSONData, locationJSON}) {
                 World
             </Box>
         </Sidebar>
-          {/* <GeoButtonDropdown dropDownRegion={dropDownRegion} dropDownCountry={dropDownCountry} currentZoom={currentZoom} pos="absolute" left={{ base: "4", lg: "25%" }} mt={{base:"1", lg:"4"}} ml={{base:"1", lg:"4"}} ></GeoButtonDropdown> */}
-          <GeoSVG country={country} setCountry={setCountry} currentZoom={currentZoom} setZoomed={setZoomed} topoJSONData={topoJSONData} locationJSON={locationJSON} containerRef={containerRef}></GeoSVG>
+        <RightSidebar projects={projectData} />
+        <GeoSVG 
+          country={country} 
+          setCountry={setCountry} 
+          currentZoom={currentZoom} 
+          setZoomed={setZoomed} 
+          topoJSONData={topoJSONData} 
+          locationJSON={locationJSON} 
+          containerRef={containerRef}
+        />
       </Page>
   )
 }
