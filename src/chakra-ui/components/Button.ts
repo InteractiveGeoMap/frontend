@@ -94,6 +94,7 @@ const variantBody = {
 
 const variantGlobe = {
   borderColor: "transparent",
+  bg: "background.base",
   color: "primary.globebase",
   _hover: {
     color: "primary.globehover",

@@ -12,11 +12,9 @@
     position: relative;
     z-index: 0;
     height: 1rem;
-    /* background-color: white; */
     padding: 0rem 1rem 1rem 1rem;
     padding-top: 40px;
     transition: all 0.1s linear;
-    /* align-items: center; */
     overflow: hidden;
     border-radius: 22px 22px 22px 22px;
     text-wrap: nowrap;

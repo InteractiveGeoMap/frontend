@@ -99,18 +99,14 @@ export default function GeoMap({topoJSONData, locationJSON}) {
       <Page 
         ref={containerRef}
         >
-<<<<<<< HEAD
-        {/* <Sidebar> 
-=======
         <Sidebar title="Explore"> 
->>>>>>> a8f84ae (chore: sidebar component update)
-            <Box m={8}>
+            {/* <Box m={8}>
                 Hello
             </Box>
             <Box m={8}>
                 World
-            </Box>
-        </Sidebar> */}
+            </Box> */}
+        </Sidebar>
           {/* <GeoButtonDropdown dropDownRegion={dropDownRegion} dropDownCountry={dropDownCountry} currentZoom={currentZoom} pos="absolute" left={{ base: "4", lg: "25%" }} mt={{base:"1", lg:"4"}} ml={{base:"1", lg:"4"}} ></GeoButtonDropdown> */}
           <GeoSVG country={country} setCountry={setCountry} currentZoom={currentZoom} setZoomed={setZoomed} topoJSONData={topoJSONData} locationJSON={locationJSON} containerRef={containerRef}></GeoSVG>
       </Page>

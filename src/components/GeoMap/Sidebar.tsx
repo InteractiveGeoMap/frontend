@@ -1,5 +1,5 @@
-import { Box, Button, useColorModeValue } from "@chakra-ui/react";
-import React, { FC, ReactNode, Children, useState, useCol } from "react";
+import { Box, Button, useColorModeValue, useColorMode } from "@chakra-ui/react";
+import React, { FC, ReactNode, Children, useState } from "react";
 import { FiSidebar } from "react-icons/fi";
 import styles from "./Sidebar.module.css";
 
@@ -19,6 +19,7 @@ const [isCollapsed, setCollapse] = useState<boolean>(true);
 */ 
 const Sidebar: FC<Props>  = ({ title="", children, setParentCollapse }) => {
   const bg = useColorModeValue("white", "gray.700");
+  const {colorMode} = useColorMode()
   const [isCollapsed, setCollapse] = useState<boolean>(true);
   const toggleCollapse = () => {
     setCollapse((prevState) => !prevState);
@@ -34,7 +35,7 @@ const Sidebar: FC<Props>  = ({ title="", children, setParentCollapse }) => {
           <span className="mx-3 absolute left-0" >{title}</span>
           <FiSidebar className="mx-3 absolute right-0"/>
         </Button>
-        <Box bg={bg} className={styles.sidebar} data-collapse={isCollapsed}>
+        <Box className={styles.sidebar} bg={colorMode === 'light' ? 'white' : 'gray.700'} data-collapse={isCollapsed}>
           <ul className={styles.sidebar__list}>
             {Children.map(children, child => 
             <li className={styles.sidebar__item}>
