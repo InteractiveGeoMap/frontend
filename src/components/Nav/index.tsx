@@ -1,10 +1,8 @@
 import { lazy, Suspense, useRef } from "react"
-// import { useTranslation } from "next-i18next"
 import { Box, Flex, Hide, Show, useDisclosure, Text } from "@chakra-ui/react"
 
 import { EthHomeIcon } from "@/components/icons"
 import { BaseLink } from "@/components/Link"
-// import Search from "@/components/Search"
 
 import { isDesktop } from "@/lib/utils/isDesktop"
 
@@ -21,8 +19,6 @@ const MobileNavMenu = lazy(() => import("./Mobile"))
 // TODO display page title on mobile
 const Nav = () => {
   const { toggleColorMode, linkSections, mobileNavProps } = useNav()
-  // const { t } = useTranslation("common")
-  const searchModalDisclosure = useDisclosure()
   const navWrapperRef = useRef(null)
   const isClient = useIsClient()
   const isDesktopFlag = isDesktop()
@@ -75,7 +71,6 @@ const Nav = () => {
               {/* Desktop */}
               {/* avoid rendering desktop menu version on mobile */}
               <Show above="md">
-                {/* <Search {...searchModalDisclosure} /> */}
                 <DesktopNavMenu toggleColorMode={toggleColorMode} />
               </Show>
 
@@ -83,11 +78,9 @@ const Nav = () => {
                 {/* Mobile */}
                 {/* use Suspense to display the Search & the Menu at the same time */}
                 <Suspense>
-                  {/* <Search {...searchModalDisclosure} /> */}
                   <MobileNavMenu
                     {...mobileNavProps}
                     linkSections={linkSections}
-                    toggleSearch={searchModalDisclosure.onOpen}
                     drawerContainerRef={navWrapperRef}
                   />
                 </Suspense>

@@ -13,7 +13,6 @@ import {
 
 import { BaseLink } from "@/components/Link"
 
-// import { trackCustomEvent } from "@/lib/utils/matomo"
 import { cleanPath } from "@/lib/utils/url"
 
 import type { Level, NavItem, NavSectionKey } from "../types"
@@ -65,11 +64,6 @@ const LvlAccordion = ({
                   color: menuColors.highlight,
                 }}
                 onClick={() => {
-                  // trackCustomEvent({
-                  //   eventCategory: "Mobile navigation menu",
-                  //   eventAction: `Menu: ${locale} - ${activeSection}`,
-                  //   eventName: action.href!,
-                  // })
                   onToggle()
                 }}
               >
@@ -110,15 +104,6 @@ const LvlAccordion = ({
                   color={menuColors.body}
                   py="0"
                   borderColor={menuColors.stroke}
-                  onClick={() => {
-                    // trackCustomEvent({
-                    //   eventCategory: "Mobile navigation menu",
-                    //   eventAction: `Level ${lvl - 1} section changed`,
-                    //   eventName: `${
-                    //     isExpanded ? "Close" : "Open"
-                    //   } section: ${label} - ${description.slice(0, 16)}...`,
-                    // })
-                  }}
                 >
                   <AccordionButton
                     justifyContent="start"

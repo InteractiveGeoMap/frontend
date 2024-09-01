@@ -9,10 +9,8 @@ import { MAIN_NAV_ID, SECTION_LABELS } from "@/lib/constants"
 import type { NavSectionKey, NavSections } from "../types"
 
 import { useNavMenuColors } from "@/hooks/useNavMenuColors"
-// import { useRtlFlip } from "@/hooks/useRtlFlip"
 
 export const useNavMenu = (sections: NavSections) => {
-  // const { direction } = useRtlFlip()
   const menuColors = useNavMenuColors()
   const [activeSection, setActiveSection] = useState<NavSectionKey | null>(null)
 

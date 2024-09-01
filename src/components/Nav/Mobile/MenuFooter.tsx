@@ -1,4 +1,3 @@
-import { useTranslation } from "next-i18next"
 import { BsTranslate } from "react-icons/bs"
 import { MdBrightness2, MdSearch, MdWbSunny } from "react-icons/md"
 import {
@@ -8,23 +7,17 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 
-import LanguagePicker from "@/components/LanguagePicker"
-
-import { MOBILE_LANGUAGE_BUTTON_NAME } from "@/lib/constants"
-
 import FooterButton from "./FooterButton"
 import FooterItemText from "./FooterItemText"
 
 type MenuFooterProps = {
   onToggle: () => void
   toggleColorMode: () => void
-  toggleSearch: () => void
 }
 
 const MenuFooter = ({
   onToggle,
   toggleColorMode,
-  toggleSearch,
 }: MenuFooterProps) => {
   // const { t } = useTranslation("common")
   const ThemeIcon = useColorModeValue(MdBrightness2, MdWbSunny)

@@ -26,7 +26,6 @@ import {
 
 import { EthereumIcon } from "@/components/icons/EthereumIcon"
 
-// import { trackCustomEvent } from "@/lib/utils/matomo"
 
 import { FROM_QUERY } from "@/lib/constants"
 
@@ -65,11 +64,6 @@ export const useNav = () => {
 
   const toggleColorMode = () => {
     chakraToggleColorMode()
-    // trackCustomEvent({
-    //   eventCategory: "nav bar",
-    //   eventAction: "click",
-    //   eventName: colorToggleEvent,
-    // })
   }
 
   const mobileNavProps = {

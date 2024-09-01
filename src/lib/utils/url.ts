@@ -44,5 +44,5 @@ export const addSlashes = (href: string): string => {
   return join("/", href, "/")
 }
 
-export const getFullUrl = (locale: string | undefined, path: string) =>
-  addSlashes(new URL(join(locale || DEFAULT_LOCALE, path), SITE_URL).href)
+// export const getFullUrl = (locale: string | undefined, path: string) =>
+//   addSlashes(new URL(join(locale || DEFAULT_LOCALE, path), SITE_URL).href)

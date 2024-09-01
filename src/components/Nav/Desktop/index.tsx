@@ -15,17 +15,12 @@ import {
 } from "@chakra-ui/react"
 
 import { IconButton } from "@/components/Buttons"
-// import LanguagePicker from "@/components/LanguagePicker"
-
-import { DESKTOP_LANGUAGE_BUTTON_NAME } from "@/lib/constants"
 
 type DesktopNavMenuProps = {
   toggleColorMode: () => void
 }
 
 const DesktopNavMenu = ({ toggleColorMode }: DesktopNavMenuProps) => {
-  // const { t } = useTranslation("common")
-  // const { locale } = useRouter()
   const languagePickerState = useDisclosure()
   const languagePickerRef = useRef<HTMLButtonElement>(null)
 

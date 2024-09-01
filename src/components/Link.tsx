@@ -10,13 +10,11 @@ import {
   VisuallyHidden,
 } from "@chakra-ui/react"
 
-// import { type MatomoEventOptions, trackCustomEvent } from "@/lib/utils/matomo"
 import { getRelativePath } from "@/lib/utils/relativePath"
 import * as url from "@/lib/utils/url"
 
 import { DISCORD_PATH, SITE_URL } from "@/lib/constants"
 
-// import { useRtlFlip } from "@/hooks/useRtlFlip"
 
 type BaseProps = {
   /** @deprecated Use `href` prop instead */
@@ -25,7 +23,6 @@ type BaseProps = {
   hideArrow?: boolean
   isPartiallyActive?: boolean
   activeStyle?: StyleProps
-  customEventOptions?: MatomoEventOptions
 }
 
 export type LinkProps = BaseProps &
@@ -52,13 +49,11 @@ export const BaseLink = forwardRef(function Link(
     hideArrow,
     isPartiallyActive = true,
     activeStyle = { color: "primary.base" },
-    customEventOptions,
     ...props
   }: LinkProps,
   ref
 ) {
   const asPath = usePathname()
-  // const { flipForRtl } = useRtlFlip()
 
   let href = (to ?? hrefProp) as string
 
@@ -90,16 +85,6 @@ export const BaseLink = forwardRef(function Link(
     return (
       <ChakraLink
         isExternal
-        // onClick={() =>
-        //   trackCustomEvent(
-        //     customEventOptions ?? {
-        //       eventCategory: `Link`,
-        //       eventAction: `Clicked`,
-        //       eventName: "Clicked on external link",
-        //       eventValue: href,
-        //     }
-        //   )
-        // }
         {...commonProps}
       >
         {children}
@@ -111,7 +96,6 @@ export const BaseLink = forwardRef(function Link(
             p="1"
             verticalAlign="middle"
             me="-1"
-            // transform={flipForRtl}
           />
         )}
       </ChakraLink>
@@ -126,16 +110,6 @@ export const BaseLink = forwardRef(function Link(
         // TODO: add i18n support using a rehype plugin (similar as we do for
         // images)
         locale={false}
-        // onClick={() =>
-        //   trackCustomEvent(
-        //     customEventOptions ?? {
-        //       eventCategory: `Link`,
-        //       eventAction: `Clicked`,
-        //       eventName: "Clicked on internal PDF",
-        //       eventValue: href,
-        //     }
-        //   )
-        // }
         {...commonProps}
         as={NextLink}
       >
@@ -147,17 +121,6 @@ export const BaseLink = forwardRef(function Link(
   if (isHash) {
     return (
       <ChakraLink
-        // onClick={(e) => {
-        //   e.stopPropagation()
-        //   trackCustomEvent(
-        //     customEventOptions ?? {
-        //       eventCategory: "Link",
-        //       eventAction: "Clicked",
-        //       eventName: "Clicked on hash link",
-        //       eventValue: href,
-        //     }
-        //   )
-        // }}
         {...commonProps}
       >
         {children}
@@ -167,16 +130,6 @@ export const BaseLink = forwardRef(function Link(
 
   return (
     <ChakraLink
-      // onClick={() =>
-      //   trackCustomEvent(
-      //     customEventOptions ?? {
-      //       eventCategory: `Link`,
-      //       eventAction: `Clicked`,
-      //       eventName: `Clicked on internal link`,
-      //       eventValue: href,
-      //     }
-      //   )
-      // }
       {...commonProps}
       as={NextLink}
     >
