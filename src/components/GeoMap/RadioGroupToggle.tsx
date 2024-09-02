@@ -1,14 +1,34 @@
 import { Box, BoxProps, Button, useColorModeValue, useRadioGroup, useRadio, UseRadioProps, Center } from "@chakra-ui/react";
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
+import { FaListUl } from "react-icons/fa";
+import { IoIosGlobe } from "react-icons/io";
+import { LuList } from "react-icons/lu";
+import { IconContext } from "react-icons";
+import { useRadioGroupToggle } from "@/hooks/useRadioGroupToggle";
+
 
 interface RadioGroupOptions extends BoxProps {
-  options?: String;
-  onTab: React.Dispatch<React.SetStateAction<String>>;
+  // options?: String;
+  children?: ReactNode;
+  // onTab: React.Dispatch<React.SetStateAction<String>>;
 }
 
-function CustomRadio(props:UseRadioProps) {
+interface CustomRadioProp extends UseRadioProps {
+  icon?: React.ReactNode;
+  option: OptionsProp
+}
+
+interface OptionsProp {
+  label: string;
+  icon: React.JSX.Element;
+  style: {
+      size: string;
+  };
+}
+
+function CustomRadio(props:CustomRadioProp) {
   const light = useColorModeValue("black", "white");
-  const { ...radioProps } = props
+  const { option, ...radioProps } = props
   const { state, getInputProps, getRadioProps } =
     useRadio(radioProps)
     return (
@@ -17,13 +37,18 @@ function CustomRadio(props:UseRadioProps) {
         <Button as="div"
           {...getRadioProps()}
           bg={state.isChecked ? 'black' : 'transparent'}
-          w={16}
-          p={1}
+          // w={16}
+          p={1.5}
+          // m={1}
           rounded='full'
           variant='ghost'
           color={state.isChecked ? 'white' : light}
         >
-          {radioProps.value}
+          <Center>
+            {/* <IconContext.Provider value={option.style}> */}
+              {option.icon}
+            {/* </IconContext.Provider> */}
+          </Center>
         </Button>
       </Box>
     )
@@ -31,25 +56,42 @@ function CustomRadio(props:UseRadioProps) {
 
 
 
-const RadioGroupToggle: FC<RadioGroupOptions>  = ({w='20px', options="Insert options", onTab}) => {
+// const RadioGroupToggle: FC<RadioGroupOptions>  = ({w='auto', onTab}) => {
+const RadioGroupToggle: FC<RadioGroupOptions>  = ({w='auto', h='auto'}) => {
   const bg = useColorModeValue("gray.200", "gray.600");
-  const toggleOptions = options.split(",")
-  const handleChange = (value: String) => {
-    onTab(value)
+  
+  const options = [
+    {
+      label: 'globe',
+      icon: <IoIosGlobe />,
+      style: {size: "1.5rem"}
+    },
+    {
+      label: 'list',
+      icon: <LuList />,
+      style: {size: "1.5rem"}
+    }
+  ]
+  const [value, setValue] = useRadioGroupToggle(options[0].label)
+  const handleChange = (e: string) => {
+    // onTab(value)
+    setValue(e)
   }
-
+  // console.log("radiotoggle value: ", value)
   const { getRadioProps } = useRadioGroup({
-    defaultValue: toggleOptions[0],
+    defaultValue: options[0].label,
+    // onChange: handleChange
     onChange: handleChange
   })
   return(
-    <Box bg={bg} rounded='full' p='0.5rem' w={w}>
-      <Center>
-        {toggleOptions.map((option) => {
+    <Box bg={bg} rounded='full' p='0' h={h} w={w}>
+      <Center h={h}>
+        {options.map((option) => {
             return (
               <CustomRadio
-                key = {option}
-                {...getRadioProps({ value: option })}
+                key = {option.label}
+                option = {option}
+                {...getRadioProps({ value: option.label })}
               />
             )
           })}
