@@ -47,6 +47,11 @@ const semanticTokens = {
       visited: { _light: "lotusBlue.700", _dark: "lotusBlue.550" },
     //   white: { _light: "white", _dark: "white" },
       text: { _light: "mirage.900", _dark: "white" },
+
+      // Globe project colors placeholder
+      globebase:{ _light: "gray.900", _dark: "orange.500" },
+      globehover:{ _light: "gray.500", _dark: "orange.400" },
+
       // ! Deprecating primary.light
       light: { _light: "lotusBlue.100", _dark: "lotusBlue.100" },
       // ! Deprecating primary.dark

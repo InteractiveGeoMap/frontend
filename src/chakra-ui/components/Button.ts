@@ -13,7 +13,7 @@ const ICON_SELECTOR = "& svg"
 const baseStyle = defineStyle({
   borderRadius: "base",
   border: "1px",
-  color: "primary.base",
+  color: "primary.text",
   lineHeight: "1.6",
   transitionProperty: "common",
   transitionDuration: "normal",
@@ -73,7 +73,7 @@ const variantGhost = {
   bg: "transparent",
   color: "primary.text",
   _hover: {
-    color: "transparent",
+    color: "primary.text",
   },
   _active: {
     boxShadow: "none",
@@ -90,6 +90,15 @@ const variantBody = {
     _active: {
     boxShadow: "none",
     },
+}
+
+const variantGlobe = {
+  borderColor: "transparent",
+  bg: "background.base",
+  color: "primary.globebase",
+  _hover: {
+    color: "primary.globehover",
+  },
 }
 
 const variantLink = defineStyle({
@@ -132,6 +141,7 @@ const variants = {
   outline: variantOutline,
   ghost: variantGhost,
   link: variantLink,
+  globe: variantGlobe,
   body: variantBody,
 }
 

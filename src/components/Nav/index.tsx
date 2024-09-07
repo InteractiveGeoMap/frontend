@@ -1,5 +1,5 @@
 import { lazy, Suspense, useRef } from "react"
-import { Box, Flex, Hide, Show, useDisclosure, Text, Button, Divider } from "@chakra-ui/react"
+import { Box, Flex, Hide, Show, useDisclosure, Text, Button, Divider, Icon } from "@chakra-ui/react"
 
 import { EthHomeIcon } from "@/components/icons"
 import { IoEllipsisHorizontalSharp } from "react-icons/io5";

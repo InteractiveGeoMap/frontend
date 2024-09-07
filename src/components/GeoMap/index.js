@@ -92,23 +92,21 @@ dropDownCountry.name="Country"
 export default function GeoMap({topoJSONData, locationJSON}) {
   const containerRef = useRef(null)
   const [ currentZoom, setZoomed ] = useState(false);
-  const [ country, setCountry] = useState(null)
-  
-  
-
+  const [ country, setCountry] = useState(null);
+  const [isCollapsed, setCollapse] = useState(true);
 
   return (
       <Page 
         ref={containerRef}
         >
-        {/* <Sidebar> 
-            <Box m={8}>
+        <Sidebar title="Explore"> 
+            {/* <Box m={8}>
                 Hello
             </Box>
             <Box m={8}>
                 World
-            </Box>
-        </Sidebar> */}
+            </Box> */}
+        </Sidebar>
           {/* <GeoButtonDropdown dropDownRegion={dropDownRegion} dropDownCountry={dropDownCountry} currentZoom={currentZoom} pos="absolute" left={{ base: "4", lg: "25%" }} mt={{base:"1", lg:"4"}} ml={{base:"1", lg:"4"}} ></GeoButtonDropdown> */}
           <GeoSVG country={country} setCountry={setCountry} currentZoom={currentZoom} setZoomed={setZoomed} topoJSONData={topoJSONData} locationJSON={locationJSON} containerRef={containerRef}></GeoSVG>
       </Page>
