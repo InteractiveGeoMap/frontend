@@ -1,4 +1,3 @@
-// import { useTranslation } from "next-i18next"
 import { Box } from "@chakra-ui/react"
 
 import { BaseLink } from "@/components/Link"
@@ -6,7 +5,6 @@ import { BaseLink } from "@/components/Link"
 import { MAIN_CONTENT_ID } from "@/lib/constants"
 
 export const SkipLink = () => {
-  // const { t } = useTranslation()
   return (
     <Box bg="primary.base">
       <BaseLink

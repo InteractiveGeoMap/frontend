@@ -15,6 +15,7 @@ import {
   menuDefaultTheme,
   spinnerDefaultTheme,
 } from "./components.utils"
+import { Divider } from "./Divider"
 import { Heading } from "./Heading"
 import { Input } from "./Input"
 import { Link } from "./Link"
@@ -22,7 +23,6 @@ import { Modal } from "./Modal"
 import { Popover } from "./Popover"
 import { Progress } from "./Progress"
 import { Radio } from "./Radio"
-import { ReactSelect } from "./ReactSelect"
 import { Switch } from "./Switch"
 import { Table } from "./Table"
 import { Tabs } from "./Tabs"
@@ -40,7 +40,8 @@ export default {
   Checkbox,
   CloseButton: closeButtonDefaultTheme,
   Code: codeDefaultTheme,
-  Divider: dividerDefaultTheme,
+//   Divider: dividerDefaultTheme, 
+  Divider,
   Drawer: drawerDefaultTheme,
   Form: formDefaultTheme,
   FormLabel: formLabelDefaultTheme,
@@ -52,7 +53,6 @@ export default {
   Popover,
   Progress,
   Radio,
-  ReactSelect,
   Spinner: spinnerDefaultTheme,
   Switch,
   Table,

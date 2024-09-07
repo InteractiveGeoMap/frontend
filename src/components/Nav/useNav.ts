@@ -1,5 +1,4 @@
 import { usePathname } from "next/navigation"
-// import { useTranslation } from "next-i18next"
 import {
   BsBook,
   BsBuildings,
@@ -26,7 +25,6 @@ import {
 
 import { EthereumIcon } from "@/components/icons/EthereumIcon"
 
-// import { trackCustomEvent } from "@/lib/utils/matomo"
 
 import { FROM_QUERY } from "@/lib/constants"
 
@@ -35,7 +33,6 @@ import type { NavSections } from "./types"
 export const useNav = () => {
   const asPath = usePathname()
   const { isOpen, onToggle } = useDisclosure()
-  // const { t } = useTranslation("common")
 
   const colorToggleEvent = useColorModeValue("dark mode", "light mode") // This will be inverted as the state is changing
   const { toggleColorMode: chakraToggleColorMode } = useColorMode()
@@ -65,11 +62,6 @@ export const useNav = () => {
 
   const toggleColorMode = () => {
     chakraToggleColorMode()
-    // trackCustomEvent({
-    //   eventCategory: "nav bar",
-    //   eventAction: "click",
-    //   eventName: colorToggleEvent,
-    // })
   }
 
   const mobileNavProps = {

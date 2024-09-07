@@ -13,7 +13,7 @@ const ICON_SELECTOR = "& svg"
 const baseStyle = defineStyle({
   borderRadius: "base",
   border: "1px",
-  color: "primary.base",
+  color: "primary.text",
   lineHeight: "1.6",
   transitionProperty: "common",
   transitionDuration: "normal",
@@ -43,7 +43,7 @@ const baseStyle = defineStyle({
 })
 
 const variantSolid = defineStyle({
-  color: "background.base",
+  color: "white",
   bg: "primary.base",
   borderColor: "transparent",
   _disabled: {
@@ -51,9 +51,8 @@ const variantSolid = defineStyle({
     color: "background.base",
   },
   _hover: {
-    color: "background.base",
+    color: "white",
     bg: "primary.hover",
-    boxShadow: "buttonHover",
   },
   _active: {
     boxShadow: "none",
@@ -71,6 +70,35 @@ const variantOutline = defineStyle({
 
 const variantGhost = {
   borderColor: "transparent",
+  bg: "transparent",
+  color: "primary.text",
+  _hover: {
+    color: "primary.text",
+  },
+  _active: {
+    boxShadow: "none",
+  },
+}
+
+const variantBody = {
+    borderColor: "transparent",
+    bg: "body.light",
+    color: "primary.text",
+    _hover: {
+      color: "primary.hover",
+    },
+    _active: {
+    boxShadow: "none",
+    },
+}
+
+const variantGlobe = {
+  borderColor: "transparent",
+  bg: "background.base",
+  color: "primary.globebase",
+  _hover: {
+    color: "primary.globehover",
+  },
 }
 
 const variantGlobe = {
@@ -83,14 +111,20 @@ const variantGlobe = {
 
 const variantLink = defineStyle({
   borderColor: "transparent",
+  color: "primary.text",
   fontWeight: 700,
-  textDecor: "underline",
-  py: 0,
-  px: 1,
-  _active: {
-    color: "primary.base",
+  _hover: {
+    color: "primary.text",
+    bg: "body.light"
   },
+//   textDecor: "underline",
+//   py: 0,
+//   px: 1,
+//   _active: {
+//     color: "primary.base",
+//   },
 })
+
 
 const sizes = {
   md: defineStyle({
@@ -116,6 +150,7 @@ const variants = {
   ghost: variantGhost,
   link: variantLink,
   globe: variantGlobe,
+  body: variantBody,
 }
 
 export const Button = defineStyleConfig({

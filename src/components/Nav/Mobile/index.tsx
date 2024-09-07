@@ -18,7 +18,6 @@ type MobileNavMenuProps = ButtonProps & {
   isOpen: boolean
   onToggle: () => void
   toggleColorMode: () => void
-  toggleSearch: () => void
   linkSections: NavSections
   drawerContainerRef: RefObject<HTMLElement | null>
 }
@@ -27,7 +26,6 @@ const MobileNavMenu = ({
   isOpen,
   onToggle,
   toggleColorMode,
-  toggleSearch,
   linkSections,
   drawerContainerRef,
   ...props
@@ -58,7 +56,6 @@ const MobileNavMenu = ({
           {/* FOOTER ELEMENTS: SEARCH, LIGHT/DARK, LANGUAGES */}
           <MenuFooter
             onToggle={onToggle}
-            toggleSearch={toggleSearch}
             toggleColorMode={toggleColorMode}
           />
         </DrawerContent>

@@ -21,7 +21,6 @@ import {
 import { ButtonProps } from "@/components/Buttons"
 import Link from "@/components/Link"
 
-// import { trackCustomEvent } from "@/lib/utils/matomo"
 import { cleanPath } from "@/lib/utils/url"
 
 import type { Level, NavItem, NavSectionKey } from "../types"
@@ -47,7 +46,7 @@ type LvlContentProps = {
  * @returns The JSX element representing the menu content.
  */
 const SubMenu = ({ lvl, items, activeSection, onClose }: LvlContentProps) => {
-  const { asPath, locale, menuColors, menuVariants, PADDING } = useSubMenu()
+  const { asPath, menuColors, menuVariants, PADDING } = useSubMenu()
 
   if (lvl > 3) return null
 
@@ -120,11 +119,6 @@ const SubMenu = ({ lvl, items, activeSection, onClose }: LvlContentProps) => {
                               as={Link}
                               onClick={() => {
                                 onClose()
-                                // trackCustomEvent({
-                                //   eventCategory: "Desktop navigation menu",
-                                //   eventAction: `Menu - ${activeSection} - ${locale}`,
-                                //   eventName: action.href!,
-                                // })
                               }}
                               {...buttonProps}
                             >

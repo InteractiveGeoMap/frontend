@@ -1,9 +1,7 @@
-// import { Inter } from "next/font/google";
 import "./globals.css";
 import ChakraProvider from "./theme-provider"
 import { RootLayout } from "@/layouts/RootLayout"
 
-// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "ETH Geo",

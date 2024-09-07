@@ -15,17 +15,12 @@ import {
 } from "@chakra-ui/react"
 
 import { IconButton } from "@/components/Buttons"
-// import LanguagePicker from "@/components/LanguagePicker"
-
-import { DESKTOP_LANGUAGE_BUTTON_NAME } from "@/lib/constants"
 
 type DesktopNavMenuProps = {
   toggleColorMode: () => void
 }
 
 const DesktopNavMenu = ({ toggleColorMode }: DesktopNavMenuProps) => {
-  // const { t } = useTranslation("common")
-  // const { locale } = useRouter()
   const languagePickerState = useDisclosure()
   const languagePickerRef = useRef<HTMLButtonElement>(null)
 
@@ -66,50 +61,6 @@ const DesktopNavMenu = ({ toggleColorMode }: DesktopNavMenuProps) => {
         }}
         onClick={toggleColorMode}
       />
-
-      {/* Locale-picker menu */}
-      {/* <LanguagePicker
-        placement="bottom-end"
-        minH="unset"
-        maxH="75vh"
-        w="xs"
-        inset="unset"
-        top="unset"
-        menuState={languagePickerState}
-      >
-        <MenuButton
-          as={Button}
-          name={DESKTOP_LANGUAGE_BUTTON_NAME}
-          ref={languagePickerRef}
-          variant="ghost"
-          color="body.base"
-          transition="color 0.2s"
-          px={{ base: "2", xl: "3" }}
-          _hover={{
-            color: "primary.hover",
-            "& svg": {
-              transform: "rotate(10deg)",
-              transition: "transform 0.5s",
-            },
-          }}
-          _active={{
-            color: "primary.hover",
-            bg: "primary.lowContrast",
-          }}
-          sx={{
-            "& svg": {
-              transform: "rotate(0deg)",
-              transition: "transform 0.5s",
-            },
-          }}
-        >
-          <Icon as={BsTranslate} fontSize="2xl" verticalAlign="middle" me={2} />
-          <Text hideBelow="lg" as="span">
-            {t("common:languages")}&nbsp;
-          </Text>
-          {locale!.toUpperCase()}
-        </MenuButton>
-      </LanguagePicker> */}
     </HStack>
   )
 }
