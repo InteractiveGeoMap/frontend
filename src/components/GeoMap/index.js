@@ -97,6 +97,7 @@ export default function GeoMap({topoJSONData, locationJSON}) {
   const [isCollapsed, setCollapse] = useState(false);
   const [value, setValue] = useState("Globe")
 
+
   console.log("isCollapse: ", isCollapsed)
   console.log("Parent value: ", value)
   return (
