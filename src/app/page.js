@@ -2,7 +2,7 @@
 import { promises as fs } from "fs"
 import GeoMap from "@/components/GeoMap"
 import Papa from 'papaparse';
-import { Box } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
 
 const topoFileName = "countries-110m.json"
 // todo use json data/project_community.json
@@ -107,7 +107,7 @@ export default async function Home() {
   return (
     <>
     <GeoMap topoJSONData={topoJSONData} locationJSON={locationJSON}></GeoMap>
-    <Box>Testing</Box>
+    {/* <Button>Testing</Button> */}
     </>
   );
 }

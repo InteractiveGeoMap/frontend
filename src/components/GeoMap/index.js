@@ -16,9 +16,10 @@ const Page = React.forwardRef(({ children}, ref) => {
   return (
     <Box
       as="article"
-      h={{base:"60vh", sm:"150vh", md:"70vh"}}
+    //   h={{base:"60vh", sm:"150vh", md:"70vh"}}
+      h="90vh"
       w="full" 
-      p={{ base: "4", lg: "8" }}
+    //   p={{ base: "4", lg: "8" }}
       mx="auto"
       id={MAIN_CONTENT_ID}
       scrollMarginTop={24}

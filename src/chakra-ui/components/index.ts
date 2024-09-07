@@ -15,6 +15,7 @@ import {
   menuDefaultTheme,
   spinnerDefaultTheme,
 } from "./components.utils"
+import { Divider } from "./Divider"
 import { Heading } from "./Heading"
 import { Input } from "./Input"
 import { Link } from "./Link"
@@ -39,7 +40,8 @@ export default {
   Checkbox,
   CloseButton: closeButtonDefaultTheme,
   Code: codeDefaultTheme,
-  Divider: dividerDefaultTheme,
+//   Divider: dividerDefaultTheme, 
+  Divider,
   Drawer: drawerDefaultTheme,
   Form: formDefaultTheme,
   FormLabel: formLabelDefaultTheme,

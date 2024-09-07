@@ -32,38 +32,47 @@ const semanticTokens = {
     // define old colors from the old theme as semanticTokens to transition
     // from emotion components to chakra
     // TODO: remove these colors as we migrate away from them
+    // For Globe: Have to slowly change custom components from ethereum.org to globe theme
+    // including oldcolors
     ...oldColors,
 
     // Design System colors
 
     // Main Set
     primary: {
-      base: { _light: "blue.500", _dark: "orange.500" },
-      highContrast: { _light: "blue.800", _dark: "orange.100" },
-      lowContrast: { _light: "blue.100", _dark: "orange.800" },
-      hover: { _light: "blue.400", _dark: "orange.400" },
-      visited: { _light: "blue.700", _dark: "orange.550" },
+      base: { _light: "lotusBlue.500", _dark: "lotusBlue.500" },
+      highContrast: { _light: "lotusBlue.800", _dark: "lotusBlue.100" },
+      lowContrast: { _light: "blue.100", _dark: "lotusBlue.800" },
+      hover: { _light: "lotusBlue.400", _dark: "lotusBlue.400" },
+      visited: { _light: "lotusBlue.700", _dark: "lotusBlue.550" },
+    //   white: { _light: "white", _dark: "white" },
+      text: { _light: "mirage.900", _dark: "white" },
       // ! Deprecating primary.light
-      light: { _light: "blue.100", _dark: "orange.100" },
+      light: { _light: "lotusBlue.100", _dark: "lotusBlue.100" },
       // ! Deprecating primary.dark
-      dark: { _light: "blue.700", _dark: "orange.800" },
+      dark: { _light: "lotusBlue.700", _dark: "lotusBlue.800" },
       // ! Deprecating primary.pressed
-      pressed: { _light: "blue.400", _dark: "orange.800" },
+      pressed: { _light: "lotusBlue.400", _dark: "lotusBlue .800" },
     },
     body: {
       base: { _light: "gray.800", _dark: "gray.100" },
+    //   base: { _light: "#F5F5F5", _dark: "#363B58" },
       medium: { _light: "gray.500", _dark: "gray.400" },
-      light: { _light: "gray.200", _dark: "gray.600" },
+    //   light: { _light: "gray.200", _dark: "gray.600" },
+      light: { _light: "#F5F5F5", _dark: "#363B58" },
       // ! Deprecating body.inverted
       inverted: { _light: "gray.100", _dark: "gray.800" },
     },
     background: {
-      base: { _light: "white", _dark: "gray.800" },
-      highlight: { _light: "gray.100", _dark: "gray.900" },
+      base: { _light: "white", _dark: "mirage.800" },
+      highlight: { _light: "mirage.100", _dark: "mirage.900" },
     },
-    disabled: { _light: "gray.400", _dark: "gray.500" },
+    divider: {
+        base: { _light: "#F0F5F9", _dark: "#363B58" },
+    },
+    disabled: { _light: "mirage.400", _dark: "mirage.500" },
     // ! Deprecating neutral
-    neutral: { _light: "white", _dark: "gray.900" },
+    neutral: { _light: "white", _dark: "mirage.900" },
 
     // Complementary Set
     attention: {
