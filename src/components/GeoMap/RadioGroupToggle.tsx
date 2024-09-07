@@ -5,6 +5,7 @@ import { IoIosGlobe } from "react-icons/io";
 import { LuList } from "react-icons/lu";
 import { IconContext } from "react-icons";
 import { useRadioGroupToggle } from "@/hooks/useRadioGroupToggle";
+import { color } from "framer-motion";
 
 
 interface RadioGroupOptions extends BoxProps {
@@ -41,13 +42,14 @@ function CustomRadio(props:CustomRadioProp) {
           p={1.5}
           // m={1}
           rounded='full'
-          variant='ghost'
+          variant='body'
           color={state.isChecked ? 'white' : light}
+          _hover={{color: "none"}}
         >
           <Center>
-            {/* <IconContext.Provider value={option.style}> */}
+            <IconContext.Provider value={option.style}>
               {option.icon}
-            {/* </IconContext.Provider> */}
+            </IconContext.Provider>
           </Center>
         </Button>
       </Box>
@@ -58,18 +60,18 @@ function CustomRadio(props:CustomRadioProp) {
 
 // const RadioGroupToggle: FC<RadioGroupOptions>  = ({w='auto', onTab}) => {
 const RadioGroupToggle: FC<RadioGroupOptions>  = ({w='auto', h='auto'}) => {
-  const bg = useColorModeValue("gray.200", "gray.600");
+  const bg = useColorModeValue("F5F5F5", "#363B58");
   
   const options = [
     {
       label: 'globe',
       icon: <IoIosGlobe />,
-      style: {size: "1.5rem"}
+      style: {size: "1rem"}
     },
     {
       label: 'list',
       icon: <LuList />,
-      style: {size: "1.5rem"}
+      style: {size: "1rem"}
     }
   ]
   const [value, setValue] = useRadioGroupToggle(options[0].label)

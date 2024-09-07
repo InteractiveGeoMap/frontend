@@ -103,6 +103,9 @@ export default function GeoMap({topoJSONData, locationJSON}) {
       <Page 
         ref={containerRef}
         >
+        <Box position="fixed" zIndex="sticky" top="15px" right="11rem" w="67.5px">
+            <RadioGroupToggle h="35px"/>
+        </Box>
         <Sidebar title="Explore"> 
             {/* <Box m={8}>
                 Hello
