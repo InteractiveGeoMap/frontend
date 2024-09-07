@@ -40,8 +40,8 @@ export const NAV_PY = 4
 
 // Determines the order of sections in the menu
 export const SECTION_LABELS: NavSectionKey[] = [
-  "geo",
-  "contribute"
+//   "geo",
+//   "contribute"
 ]
 
 // Glossary Definition Component
