@@ -60,7 +60,7 @@ function CustomRadio(props:CustomRadioProp) {
 
 // const RadioGroupToggle: FC<RadioGroupOptions>  = ({w='auto', onTab}) => {
 const RadioGroupToggle: FC<RadioGroupOptions>  = ({w='auto', h='auto'}) => {
-  const bg = useColorModeValue("F5F5F5", "#363B58");
+  const bg = useColorModeValue("#F5F5F5", "#363B58");
   
   const options = [
     {
